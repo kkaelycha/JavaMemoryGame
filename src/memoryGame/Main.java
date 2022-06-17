@@ -11,7 +11,8 @@ public class Main {
 	public static void main(String[] args) {
 		// Introduction
 		System.out.println("This is a memory game made in Java.");
-		System.out.println("Enter in the number of first the row, then the column to flip a card.");
+		System.out.println("Enter in the number of first the column, then the row to flip a card.");
+		System.out.println("");
 
 		// 2 arrays for memory game are 4 by 4, flipped and not flipped
 		boardArray = new int[4][4];
@@ -48,14 +49,17 @@ public class Main {
 
 			while ((row > flippedArray.length || row < 1) || (col > flippedArray.length || col < 1)) {
 				try {
+					System.out.println("");
 					System.out.println("Enter the first column you'd like to pick.");
 					col = scanMachine.nextInt();
+					System.out.println("");
 					System.out.println("Enter the first row you'd like to pick.");
 					row = scanMachine.nextInt();
 					
 					flippedArray[row - 1][col - 1] = true;
 					board();
 				} catch (ArrayIndexOutOfBoundsException e) {
+					System.out.println("");
 					System.out.println("You've selected numbers that aren't in the column or row!");
 					System.out.println("Please enter a number between 1 and 4.");
 					System.out.println("");
@@ -64,14 +68,17 @@ public class Main {
 
 			while ((row2 > flippedArray.length || row2 < 1) || (col2 > flippedArray.length || col2 < 1)) {
 				try {
+					System.out.println("");
 					System.out.println("Enter the second column you'd like to pick.");
 					col2 = scanMachine.nextInt();
+					System.out.println("");
 					System.out.println("Enter the second row you'd like to pick");
 					row2 = scanMachine.nextInt();
 
 					flippedArray[row2 - 1][col2 - 1] = true;
 					board();
 				} catch (ArrayIndexOutOfBoundsException e) {
+					System.out.println("");
 					System.out.println("You've selected numbers that aren't in the column or row!");
 					System.out.println("Please enter a number between 1 and 4.");
 					System.out.println("");
@@ -83,9 +90,11 @@ public class Main {
 				flippedArray[row - 1][col - 1] = false;
 				flippedArray[row2 - 1][col2 - 1] = false;
 			}
+			System.out.println("");
 			System.out.println("Type any key then enter to continue, Q to quit.");
 			ans = scanMachine.next();
 			if ((ans.startsWith("q") || ans.startsWith("Q"))) {
+				System.out.println("");
 				System.out.println("Thanks for playing!");
 			}else
 			board();
